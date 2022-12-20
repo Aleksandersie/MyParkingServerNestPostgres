@@ -8,6 +8,7 @@ export class CarsController {
 
   @Post()
   create(@Body() carsDto: CarsDto) {
+    console.log(carsDto);
     return this.carsService.createCar(carsDto);
   }
   @Get()
