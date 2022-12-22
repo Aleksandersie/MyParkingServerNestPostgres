@@ -15,4 +15,12 @@ export class CarsService {
     const cars = this.carsRepo.findAll();
     return cars;
   }
+  async complete(dto: CarsDto) {
+    console.log(dto);
+    const car = await this.carsRepo.findOne({ where: { id: dto.id } });
+    const completeParking = await this.carsRepo.destroy({
+      where: { id: car.id },
+    });
+    return completeParking;
+  }
 }
