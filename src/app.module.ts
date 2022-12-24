@@ -4,6 +4,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { CarsModule } from './cars/cars.module';
 import { ConfigModule } from '@nestjs/config';
 import { Cars } from './cars/cars.model';
+import { PriceModule } from './price/price.module';
+import { Price } from './price/price.model';
 
 @Module({
   imports: [
@@ -17,10 +19,11 @@ import { Cars } from './cars/cars.model';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [Cars],
+      models: [Cars, Price],
       autoLoadModels: true,
     }),
     CarsModule,
+    PriceModule,
   ],
   controllers: [],
   providers: [],
