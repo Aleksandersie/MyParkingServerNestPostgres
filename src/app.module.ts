@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { Cars } from './cars/cars.model';
 import { PriceModule } from './price/price.module';
 import { Price } from './price/price.model';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { Price } from './price/price.model';
     }),
     CarsModule,
     PriceModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
